@@ -16,9 +16,15 @@ gender = st.selectbox("Gender", options=["Select...","Female", "Male"])
 if gender == "Select...":
     st.warning("Please select a gender.")
 tumor_size = st.number_input("Tumor Size (in cm)", min_value=0.0, value=2.5)
-location = st.selectbox("Tumor Location", options=["Frontal", "Occipital", "Parietal", "Temporal"])  # Update as per your values
-histology = st.selectbox("Histology Type", options={"Astrocytoma", "Glioblastoma", "Medulloblastoma", "Meningioma"})          # Update as per your values
-stage = st.selectbox("Cancer Stage", options={"Stage 0", "Stage 1", "Stage 2", "Stage 3", "Stage 4"})
+location = st.selectbox("Tumor Location", options=["Select...","Frontal", "Occipital", "Parietal", "Temporal"])
+if location == "Select...":
+    st.warning("Please specify tumor location")
+histology = st.selectbox("Histology Type", options=["Select...","Astrocytoma", "Glioblastoma", "Medulloblastoma", "Meningioma"]) 
+if histology == "Select...":
+    st.warning("Please specify Histology type")
+stage = st.selectbox("Cancer Stage", options=["Select...","Stage 0", "Stage 1", "Stage 2", "Stage 3", "Stage 4"])
+if stage == "Select...":
+    st.warning("Please specify Cancer Stage")
 
 symptom_1 = st.selectbox("Symptom 1", options=[0, 1, 2, 3])
 symptom_2 = st.selectbox("Symptom 2", options=[0, 1, 2, 3])
