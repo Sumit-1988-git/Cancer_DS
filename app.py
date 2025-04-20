@@ -12,7 +12,9 @@ st.write("🔍 This app uses a Random Forest Classifier to predict type of cance
 
 # Collect user input
 age = st.number_input("Age", min_value=1, max_value=90, value=30)
-gender = st.selectbox("Gender", options=["Female", "Male"])
+gender = st.selectbox("Gender", options=["Select...","Female", "Male"])
+if gender == "Select...":
+    st.warning("Please select a gender.")
 tumor_size = st.number_input("Tumor Size (in cm)", min_value=0.0, value=2.5)
 location = st.selectbox("Tumor Location", options=["Frontal", "Occipital", "Parietal", "Temporal"])  # Update as per your values
 histology = st.selectbox("Histology Type", options={"Astrocytoma", "Glioblastoma", "Medulloblastoma", "Meningioma"})          # Update as per your values
